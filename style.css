@@ -51,8 +51,14 @@ Nome:focus {
 }
 
 hr {
+    width: 15%;
+    margin-left: 0;
     margin-top: -20px;
     border-width: 3px;
+    border: none;
+    height: 1.5px;
+    background-color: #0D1821;
+
 }
 /* COR 1 AZUL ESCURO: 0D1821 */
 /* COR 2 AZUL CLARO: 344966 */
