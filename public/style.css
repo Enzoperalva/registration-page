@@ -15,7 +15,7 @@ section {
     box-shadow: 3px 3px 10px rgb(0, 0, 0, 0.353);
     width: 530px;
     height: auto;
-    margin-top: -20px;
+    margin-top: -55px;
 
     position: relative;
     top: 150px;
@@ -31,7 +31,7 @@ h1 {
     margin-top: -10px;
 }
 
-#input {
+.input {
     border: #0D1821 3px solid;
     width: 500px;
     padding: 10px;
@@ -63,7 +63,7 @@ button {
 }
 
 div {
-    margin-top: -10px;
+    margin-top: -5px;
 }
 /* COR 1 AZUL ESCURO: 0D1821 */
 /* COR 2 AZUL CLARO: 344966 */

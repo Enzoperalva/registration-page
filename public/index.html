@@ -6,33 +6,40 @@
     <title>Página login</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon"> 
+    <script src="../js/script.js" defer></script>
 </head>
 <body>
     <section>
         <header>
             <h1>Cadastro</h1>
             <hr>
-            <p>Nome</p>
         </header>
-        <div>
-            <input type="text" placeholder="Username" id="input">
-        </div>
-        <header>
-            <p>Email</p>
-        </header>
-        <div>
-            <input type="email" name="" placeholder="Email" id="input">
-        </div>
-        <header>
-            <p>Senha</p>
-        </header>
+        <form action="script.js" autocomplete="off">  
             <div>
-                <input type="password" placeholder="Password" id="input">
+                <label for="nome"><p>Nome</p></label>
             </div>
             <div>
-                <button type="button" style="color: white;" onclick="clicar()">CADASTRAR</button>
+                <input class="input" type="text" placeholder="Username" id="nome" required maxlength="40" minlength="2">
             </div>
+
+            <div>
+                <label for="email"><p>Email</p></label>
+            </div>
+            <div>
+            <input class="input" type="email" name="" placeholder="Email" id="email" required maxlength="50">
+            </div>
+            
+            <div>
+                <label for="senha"><p>Senha</p></label>
+            </div>
+            <div>
+                <input class="input" type="password" placeholder="Password" id="senha" required maxlength="20" minlength="8">
+            </div>
+
+            <div>
+                <button type="submit" style="color: white;" id="botao">CADASTRAR</button>
+            </div>
+        </form>
     </section>
-    <script src="../js/script.js"></script>
 </body>
 </html>
