@@ -14,12 +14,13 @@
             <h1>Cadastro</h1>
             <hr>
         </header>
-        <form action="script.js" autocomplete="off">  
+        <form action="script.js" autocomplete="off" novalidate>  
             <div>
                 <label for="nome"><p>Nome</p></label>
             </div>
             <div>
                 <input class="input" type="text" placeholder="Username" id="nome" required maxlength="40" minlength="2">
+                <div class="msg-erro-name"></div>
             </div>
 
             <div>
@@ -27,6 +28,7 @@
             </div>
             <div>
             <input class="input" type="email" name="" placeholder="Email" id="email" required maxlength="50">
+                <div class="msg-erro-email"></div>
             </div>
             
             <div>
@@ -34,10 +36,11 @@
             </div>
             <div>
                 <input class="input" type="password" placeholder="Password" id="senha" required maxlength="20" minlength="8">
+                <div class="msg-erro-senha"></div>
             </div>
 
             <div>
-                <button type="submit" style="color: white;" id="botao">CADASTRAR</button>
+                <button type="submit" style="color: white;" id="submit-button">CADASTRAR</button>
             </div>
         </form>
     </section>
