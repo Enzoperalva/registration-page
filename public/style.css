@@ -77,5 +77,12 @@ input:focus {
     border-radius: 3px;
 }
 
+#span-required {
+    display: none;
+    font-size: 15px;
+    color: #982821;
+    padding: 5px;
+    margin: 5px 0px 0px 1px;
+}
 /* COR 1 AZUL ESCURO: 0D1821 */
 /* COR 2 AZUL CLARO: 344966 */
