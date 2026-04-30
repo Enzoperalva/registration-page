@@ -14,29 +14,29 @@
             <h1>Cadastro</h1>
             <hr>
         </header>
-        <form action="script.js" autocomplete="off" novalidate>  
+        <form action="script.js" autocomplete="off" novalidate id="form">  
             <div>
                 <label for="nome"><p>Nome</p></label>
-            </div>
-            <div>
                 <input class="input" type="text" placeholder="Username" id="nome" required maxlength="40" minlength="2">
-                <div class="msg-erro-name"></div>
+                <span id="span-required"></span>
             </div>
 
             <div>
                 <label for="email"><p>Email</p></label>
-            </div>
-            <div>
-            <input class="input" type="email" name="" placeholder="Email" id="email" required maxlength="50">
-                <div class="msg-erro-email"></div>
+                <input class="input" type="email" name="" placeholder="Email" id="email" required maxlength="50">
+                <span id="span-required"></span>
             </div>
             
             <div>
                 <label for="senha"><p>Senha</p></label>
-            </div>
-            <div>
                 <input class="input" type="password" placeholder="Password" id="senha" required maxlength="20" minlength="8">
-                <div class="msg-erro-senha"></div>
+                <span id="span-required"></span>
+            </div>
+
+            <div>
+                <label for="repeat-senha"> <p>Confirmar senha</p></label>
+                <input class="input" type="password" placeholder="Confirm">
+                <span id="span-required"></span>
             </div>
 
             <div>
