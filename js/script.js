@@ -1,51 +1,56 @@
-const nameInput = document.getElementById('nome');
-const emailInput = document.getElementById('email');
-const senhaInput = document.getElementById('senha');
+const form = document.getElementById('form');
+const campos = document.querySelectorAll('.input');
+const spans = document.querySelectorAll('#span-required');
 const subimitButton = document.getElementById('submit-button');
-
-const erroMessageName = document.querySelector('.msg-erro-name');
-const erroMessageEmail = document.querySelector('.msg-erro-email');
-const erroMessageSenha = document.querySelector('.msg-erro-senha');
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 
-subimitButton.addEventListener('click', (e) => {
-    e.preventDefault()
-    
-    const nameValue = nameInput.value;
-    const emailValue = emailInput.value;
-    const senhaValue = senhaInput.value;
+function setError(index){
+    campos[index].style.border = '3px solid #982821';
+    spans[index].style.display = 'block';
+}
 
-    // Checar nome
-    if (nameValue === '') {
-        erroMessageName.textContent = 'Informe o seu nome.'
-        erroMessageName.classList = 'error';
+function removeError(index) {
+    campos[index].style.border = '';
+    spans[index].style.display = 'none'; 
+};
+
+nameValidate = campos[0].addEventListener("input", function () {
+    if (campos[0].value.length < 2) {
+        setError(0)
     } else {
-        erroMessageName.textContent = ''
-        erroMessageName.classList = '';
+        removeError(0); 
     };
-
-    // Checar e-mail
-    if (emailValue === '') {
-        erroMessageEmail.textContent = 'Informe o seu e-mail.'
-        erroMessageEmail.classList = 'error';
-    } else {
-        erroMessageEmail.textContent = ''
-        erroMessageEmail.classList = '';
-    };
-
-    // Checar senha
-    if (senhaValue === '') {
-        erroMessageSenha.textContent = 'Forneça sua senha.'
-        erroMessageSenha.classList = 'error';
-    } else {
-        erroMessageSenha.textContent = ''
-        erroMessageSenha.classList = '';
-    };
-
 });
 
+campos[1].addEventListener("input", function() {
+    if (emailRegex.test(campos[1].value)){
+        removeError(1)
+    } else {
+        setError(1)
+    };
+});
 
+campos[2].addEventListener("input", function(){
+    if (campos[2].value.length < 8) {
+        setError(2)
+    } else {
+        removeError(2)
+    };
+});
 
+campos[3].addEventListener("input", function() {
+    if (campos[3].value !== campos[2].value) {
+        setError(3)
+    }else {
+        removeError(3)
+    };
+});
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+});
 
 subimitButton.addEventListener('mousemove', function() {
     subimitButton.style.backgroundColor = '#0d1821f4'
