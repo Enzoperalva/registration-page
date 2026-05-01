@@ -14,42 +14,64 @@ function removeError(index) {
     campos[index].style.border = '';
     spans[index].style.display = 'none'; 
 };
-
-nameValidate = campos[0].addEventListener("input", function () {
-    if (campos[0].value.length < 2) {
+function nameValidate() {
+    if (campos[0].value.length < 2){
         setError(0)
-    } else {
-        removeError(0); 
-    };
-});
-
-campos[1].addEventListener("input", function() {
-    if (emailRegex.test(campos[1].value)){
-        removeError(1)
-    } else {
-        setError(1)
-    };
-});
-
-campos[2].addEventListener("input", function(){
-    if (campos[2].value.length < 8) {
-        setError(2)
-    } else {
-        removeError(2)
-    };
-});
-
-campos[3].addEventListener("input", function() {
-    if (campos[3].value !== campos[2].value) {
-        setError(3)
+        return false;
     }else {
-        removeError(3)
+        removeError(0)
+        return true;
     };
-});
+};
+
+function emailValidate(){
+    if (!emailRegex.test(campos[1].value)){
+        setError(1)
+        return false
+    }else {
+        removeError(1);
+        return true;
+    };
+};
+
+function senhaValidate(){
+    if (campos[2].value.length < 8){
+        setError(2)
+        return false;
+    }else {
+        removeError(2)
+        return true;
+    };
+};
+
+function confirmValidate(){
+    if (campos[2].value == campos[3].value && campos[3].value.length >= 8){
+        removeError(3)
+        return true;
+    }else {
+        setError(3)
+        return false;
+    };
+};
+
+campos[0].addEventListener("input", nameValidate);
+campos[1].addEventListener("input", emailValidate);
+campos[2].addEventListener("input", senhaValidate);
+campos[3].addEventListener("input", confirmValidate);
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
+    
+    isNameValidate = nameValidate();
+    isEmailValidate = emailValidate();
+    isSenhaValidate = senhaValidate();
+    isConfirmValidate = confirmValidate();
 
+    if (isNameValidate && isEmailValidate && isSenhaValidate && isConfirmValidate) {
+        console.log('Validação de formulario ok!');
+    }else {
+        console.error('Erro na validação do formulario!');
+    };
 });
 
 subimitButton.addEventListener('mousemove', function() {
