@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon"> 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="../js/script.js" defer></script>
     <script src="../js/modal.js" defer></script>
 </head>
@@ -32,12 +33,14 @@
             <div>
                 <label for="senha"><p>Senha</p></label>
                 <input class="input" type="password" placeholder="Password" id="senha" required maxlength="20">
+                <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i>
                 <span id="span-required">Digite uma senha com no mínimo 8 caracteres.</span>
             </div>
 
             <div>
                 <label for="repeat-senha"> <p>Confirmar senha</p></label>
                 <input class="input" type="password" placeholder="Confirm">
+                <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i>
                 <span id="span-required">Senhas devem ser compatíveis.</span>
             </div>
 

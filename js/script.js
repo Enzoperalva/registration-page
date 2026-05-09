@@ -74,6 +74,18 @@ form.addEventListener("submit", (event) => {
     };
 });
 
+function mostrarSenha(){
+    const btnShowPass = document.getElementById('btn-senha');
+
+    if(campos[2].type === 'password'){
+        campos[2].setAttribute('type', 'text');
+        btnShowPass.classList.replace('bi-eye-fill' ,'bi-eye-slash-fill');
+    } else {
+        campos[2].setAttribute('type', 'password')
+        btnShowPass.classList.replace('bi-eye-slash-fill', 'bi-eye-fill')
+    };
+} 
+
 subimitButton.addEventListener('mousemove', function() {
     subimitButton.style.backgroundColor = '#0d1821f4'
 });

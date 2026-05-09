@@ -84,5 +84,19 @@ input:focus {
     padding: 5px;
     margin: 5px 0px 0px 1px;
 }
+
+div{
+    position: relative;
+}
+
+div i{
+    font-size: 17px;
+    cursor: pointer;
+
+    position: absolute;
+    right: 4%;
+    color: #0D1821;
+    margin-top: 4px;
+}
 /* COR 1 AZUL ESCURO: 0D1821 */
 /* COR 2 AZUL CLARO: 344966 */
