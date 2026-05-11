@@ -59,15 +59,21 @@ campos[1].addEventListener("input", emailValidate);
 campos[2].addEventListener("input", senhaValidate);
 campos[3].addEventListener("input", confirmValidate);
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+console.log('CHEGOU ATE AQUI')
+form.addEventListener("click", (event) => {
+    event.preventDefault()
     
+    const formOk = false;
     isNameValidate = nameValidate();
     isEmailValidate = emailValidate();
     isSenhaValidate = senhaValidate();
     isConfirmValidate = confirmValidate();
 
+
     if (isNameValidate && isEmailValidate && isSenhaValidate && isConfirmValidate) {
+        formOk = true;
+        // export default formOk;
+        console.log(formOk);
         console.log('Validação de formulario ok!');
     }else {
         console.error('Erro na validação do formulario!');
@@ -79,12 +85,24 @@ function mostrarSenha(){
 
     if(campos[2].type === 'password'){
         campos[2].setAttribute('type', 'text');
-        btnShowPass.classList.replace('bi-eye-fill' ,'bi-eye-slash-fill');
+        btnShowPass.classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
     } else {
         campos[2].setAttribute('type', 'password')
         btnShowPass.classList.replace('bi-eye-slash-fill', 'bi-eye-fill')
     };
-} 
+}
+
+function mostrarSenhaDois(){
+    const btnShowPassDois = document.getElementById('btn-senha-dois');
+
+    if(campos[3].type === 'password'){
+        campos[3].setAttribute('type', 'text');
+        btnShowPassDois.classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
+    } else {
+        campos[3].setAttribute('type', 'password')
+        btnShowPassDois.classList.replace('bi-eye-slash-fill', 'bi-eye-fill')
+    };
+};
 
 subimitButton.addEventListener('mousemove', function() {
     subimitButton.style.backgroundColor = '#0d1821f4'

@@ -17,10 +17,10 @@
             <h1>Cadastro</h1>
             <hr>
         </header>
-        <form action="script.js" autocomplete="off" novalidate id="form">  
+        <form action="" method="post" autocomplete="off" novalidate id="form">  
             <div>
                 <label for="nome"><p>Nome</p></label>
-                <input class="input" type="text" placeholder="Username" id="nome" required maxlength="40" minlength="2">
+                <input class="input" type="text" placeholder="Nome" id="nome" required maxlength="40" minlength="2">
                 <span id="span-required">Nome deve ter no mínimo 2 caracteres.</span>
             </div>
 
@@ -32,21 +32,25 @@
             
             <div>
                 <label for="senha"><p>Senha</p></label>
-                <input class="input" type="password" placeholder="Password" id="senha" required maxlength="20">
+                <input class="input" type="password" placeholder="Senha" id="senha" required maxlength="20">
                 <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i>
                 <span id="span-required">Digite uma senha com no mínimo 8 caracteres.</span>
             </div>
 
             <div>
                 <label for="repeat-senha"> <p>Confirmar senha</p></label>
-                <input class="input" type="password" placeholder="Confirm">
-                <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i>
+                <input class="input" type="password" placeholder="Confirmar senha">
+                <i class="bi bi-eye-fill" id="btn-senha-dois" onclick="mostrarSenhaDois()"></i>
                 <span id="span-required">Senhas devem ser compatíveis.</span>
             </div>
 
             <div>
                 <button type="submit" style="color: white;" id="submit-button">CADASTRAR</button>
             </div>
+
+            <dialog id="modal">
+                <p>Parabens pelo cadastro</p>
+            </dialog>
         </form>
     </section>
 </body>
